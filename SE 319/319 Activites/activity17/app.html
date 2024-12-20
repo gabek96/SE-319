@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 17</title>
+</head>
+
+<body>
+
+    <h1>Get Method</h1>
+    <button onclick="getRobots()">Show All Robots</button>
+
+    <!-- Container to display robot data -->
+    <div id="showRobots"></div>
+
+    <script>
+        function getRobots() {
+            // Fetching data from the API endpoint
+            fetch('http://localhost:8081/listRobots')
+                .then(response => {
+                    // Check if the response is ok (status code 200-299)
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    // Return the response as JSON
+                    return response.json();
+                })
+                .then(data => {
+                    // 3.1 - Log the data to the console
+                    console.log(data);
+
+                    // 3.2 - Call displayRobots() with the fetched data
+                    displayRobots(data);
+                })
+                .catch(error => {
+                    // Handle any errors that occur during the fetch or response processing
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }
+
+        // Function to display robots (same as displayMovies logic)
+        function displayRobots(myRobots) {
+            // Get the container element to display the data
+            var container = document.getElementById("showRobots");
+
+            // Clear the container before appending new robots
+            container.innerHTML = '';
+
+            // Display the robots data in JSON format
+            var jsonContainer = document.createElement("div"); // Create a new div for JSON output
+            jsonContainer.innerHTML = `<h2>JSON Format</h2><pre>${JSON.stringify(myRobots, null, 2)}</pre>`; // Format JSON with indentation
+            container.appendChild(jsonContainer); // Append JSON output to container
+
+            // Loop through the robot data and display each robot in HTML
+            for (var i = 0; i < myRobots.length; i++) {
+                var name = myRobots[i].name;
+                var price = myRobots[i].price;
+                var description = myRobots[i].description;
+                var imageUrl = myRobots[i].imageUrl;
+
+                // Create a new div element to hold the robot's information
+                var div = document.createElement("div");
+
+                // Set the innerHTML of the div with the robot details
+                div.innerHTML = `
+          <h3>${name}</h3>
+          <p><strong>Price:</strong> ${price}</p>
+          <p><strong>Description:</strong> ${description}</p>
+          <img src="${imageUrl}" alt="${name}" style="width:100px;height:auto;">
+        `;
+
+                // Append the new div to the container
+                container.appendChild(div);
+            }
+
+
+        }
+    </script>
+
+</body>
+
+</html>

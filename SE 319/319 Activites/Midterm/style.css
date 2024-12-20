@@ -1,0 +1,204 @@
+
+
+header{
+    background-color: rgb(15, 57, 101);
+    color: aliceblue;
+    padding: 10px 0;
+
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    
+}
+
+nav li{
+    margin: 0 20px;
+}
+
+nav a{
+    text-decoration: none;
+    color: #fff;
+}
+
+img{
+    max-width: 200px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    }
+    footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    }
+    footer a {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 20px;
+        }
+        footer a:hover {
+        color: #f39c12; /* Change color on hover */
+        }
+        
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            user-select: none;
+          }
+      
+          @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+            }
+          }
+      
+          .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, 0.1);
+            border: solid rgba(0, 0, 0, 0.15);
+            border-width: 1px 0;
+            box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1), inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+          }
+      
+          .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+          }
+      
+          .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+          }
+      
+          .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+          }
+          /* Add this CSS to your style.css */
+
+          .card {
+            width: fit-content; /* Make cards take full width of their parent */
+            height: fit-content; /* Ensure all cards have the same height */
+          }
+          
+          .card img {
+            width: 100%; /* Make images responsive and fill the card */
+            height: 200px; /* Set a fixed height for uniformity */
+            object-fit: cover; /* Cover the card area without distortion */
+            display: block; /* Remove spacing below the image */
+            margin: 0 auto; /* Center the image */
+          }
+          
+.card-body {
+  text-align: center; /* Center the text inside the card */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.search-bar,
+.genre-dropdown {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.ck-input {
+  border: none;
+  outline: none;
+  padding: 8px;
+  flex-grow: 1;
+  border-radius: 5px;
+}
+
+.search-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.genre-select {
+  padding: 8px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.results {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.comic-item {
+  display: flex; /* Ensure comic items are flex containers */
+  justify-content: center; /* Center items horizontally */
+  align-items: stretch; /* Make sure all items stretch to the same height */
+  margin: 0; /* Remove margin for no spacing */
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.favorite-btn {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.favorite-btn.favorited {
+  color: gold;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  color: #333;
+}
+
+.topic {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.comments {
+  margin-top: 10px;
+}

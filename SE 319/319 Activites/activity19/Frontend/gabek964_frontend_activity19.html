@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <title>Best Robots</title>
+</head>
+
+<body>
+    <h1 class="text-center mt-4">Best Robots</h1>
+
+    <!-- Section to display all robots -->
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div id="col1" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+                <!-- Cards will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </div>
+    <button onclick="showAllRobots()" class="btn btn-primary">Show ALL Robot</button>
+
+
+
+    <!-- Input field and button to fetch a single robot by ID -->
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div id="col2" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+                <!-- Cards will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </div>
+    <input id="robotId" class="form-control me-2" placeholder="Enter Robot ID" />
+    <button onclick="showONeRobot()" class="btn btn-primary">Show one Robot </button>
+
+
+
+
+    <!-- Section to create a robot -->
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div id="col3" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+                <!-- Cards will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </div>
+    <button onclick="addANewRobot()" class="btn btn-primary">Add One Robot</button>
+
+
+    <!-- Section to DELETE a robot -->
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div id="col4" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+                <!-- Cards will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </div>
+    <input id="deleteId" class="form-control me-2" placeholder="Enter Robot ID" />
+    <button onclick="deleteOneRobot()" class="btn btn-primary">Delete Robot ID</button>
+
+
+    <!-- Section to UPDATE a robot -->
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div id="col5" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+                <!-- Cards will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </div>
+    <input id="updateId" class="form-control me-2" placeholder="Enter Robot ID" />
+    <button onclick="updateOneRobot()" class="btn btn-primary">Update Robot </button>
+
+
+    <script>
+        function showAllRobots() {
+            // Fetch all robots
+            fetch("http://localhost:8081/robot")
+                .then(response => response.json())
+                .then(myRobots => {
+                    loadRobots(myRobots);
+                })
+                .catch(err => console.log("Error fetching robots:", err));
+        }
+
+
+        // Load and display all robots
+        function loadRobots(myRobots) {
+            console.log(myRobots);
+            var CardRobot = document.getElementById("col1");
+            CardRobot.innerHTML = ""; // Clear existing content
+            myRobots.forEach(robot => {
+                const { name, price, imageUrl, description } = robot;
+                let AddCardRobot = document.createElement("div");
+                AddCardRobot.classList.add("col1"); // Bootstrap class for grid layout
+                AddCardRobot.innerHTML = `
+                    <div class="card shadow-sm">
+                        <img src="${imageUrl}" class="card-img-top" alt="${name}">
+                        <div class="card-body text-center">
+                            <p class="card-text">${description}</p>
+                            <h5 class="card-title">${name}</h5>
+                            <p class="card-text fw-bold">$${price}</p>
+                        </div>
+                    </div>`;
+                CardRobot.appendChild(AddCardRobot);
+            });
+        }
+
+        // Fetch and display a single robot by ID
+        function showONeRobot() {
+            // Fetch the value from the input field
+            let id = document.getElementById("robotId").value;
+
+            fetch(`http://localhost:8081/robot/${id}`, {
+                method: "GET",
+                headers: { "Content-Type": "application/json" }
+            })
+                .then((response) => {
+                    if (response.status != 200) {
+                        return response.json().then((errData) => {
+                            throw new Error(
+                                `GET One Robot response was not ok :\n Status:${response.status}. \n Error: ${errData.error}`
+                            );
+                        });
+                    }
+                    return response.json();
+                })
+                .then((myFavoriteRobot) => {
+                    displayCRUDRobot(myFavoriteRobot, "col2", "Robot displayed");
+                })
+                .catch((error) => {
+                    alert("Error showing robot:" + error.message); // Display alert if there's an error
+                });
+        } // end of function
+
+        function addANewRobot() {
+            fetch("http://localhost:8081/robot", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    id: 32,
+                    name: "Robot Abraham",
+                    price: 100.9,
+                    description: "I robot is one example of an image for my exercise",
+                    imageUrl: "https://robohash.org/Abraham",
+                }),
+            })
+                .then((response) => {
+                    if (response.status != 200) {
+                        return response.json().then((errData) => {
+                            throw new Error(`POST response was not ok :\n Status:${response.status}. \n Error: ${errData.error}`);
+                        });
+                    }
+                    return response.json();
+                })
+                .then((createdRobot) => {
+                    displayCRUDRobot(createdRobot, "col3", "Robot Created");
+                    alert(`Robot added successfully!`); // Display alert with success message
+                })
+                .catch((error) => {
+                    alert("Error adding robot:" + error.message); // Display alert if there's an error
+                });
+        } // end addANewRobot
+
+        //Replace image and text per every one in HTML
+        function displayCRUDRobot(robot, divcol, message) {
+            console.log(message);
+            console.log(robot);
+
+            var CardRobot = document.getElementById(divcol);
+            let id = robot.id;
+            let name = robot.name;
+            let price = robot.price;
+            let description = robot.description;
+            let imageUrl = robot.imageUrl;
+
+            let AddCardRobot = document.createElement("div");
+            AddCardRobot.classList.add(divcol); // Add Bootstrap class to the column
+            AddCardRobot.innerHTML = `
+            <div class="card shadow-sm">
+                <h1>${message} ${id}</h1>
+                <img src=${imageUrl} class="card-img-top" alt="..."></img>
+                <div class="card-body">
+                    <p class="card-text"> <strong>${description}</strong></p>
+                    <p class="card-text"> <strong>${name}</strong>, $${price}</p>
+                </div>
+            </div>
+        `;
+            CardRobot.appendChild(AddCardRobot);
+        } // end of function
+
+
+        function deleteOneRobot() {
+            // Fetch the value from the input field
+            let id = document.getElementById("deleteId").value;
+            console.log(id);
+
+            fetch(`http://localhost:8081/robot/${id}`, {
+                method: "DELETE",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ id: id }),
+            })
+                .then((response) => {
+                    if (response.status != 200) {
+                        return response.json().then((errData) => {
+                            throw new Error(
+                                `DELETE response was not ok :\n Status:${response.status}. \n Error: ${errData.error}`
+                            );
+                        });
+                    }
+                    return response.json();
+                })
+                .then((deleteThisRobot) => {
+                    displayCRUDRobot(deleteThisRobot, "col4", "Robot Deleted");
+                })
+                .catch((error) => {
+                    alert("Error deleting robot:" + error.message); // Display alert if there's an error
+                });
+        } // end of function
+
+
+        function updateOneRobot() {
+            // Fetch the value from the input field
+            let id = document.getElementById("updateId").value;
+            console.log(id);
+
+            fetch(`http://localhost:8081/robot/${id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: "Robot Abraham ALDACO-GASTELUM",
+                    price: 100.10,
+                    description: "I robot is one example of an image for my exercise",
+                    imageUrl: "https://robohash.org/Abraham",
+                }),
+            })
+                .then((response) => {
+                    if (response.status != 200) {
+                        return response.json().then((errData) => {
+                            throw new Error(
+                                `UPDATE response was not ok :\n Status:${response.status}. \n Error: ${errData.error}`
+                            );
+                        });
+                    }
+                    return response.json();
+                })
+                .then((updateThisRobot) => {
+                    displayCRUDRobot(updateThisRobot, "col5", "Robot Updated");
+                })
+                .catch((error) => {
+                    alert("Error deleting robot:" + error.message); // Display alert if there's an error
+                });
+        } // end updateOneRobot
+
+
+    </script>
+</body>
+
+</html>

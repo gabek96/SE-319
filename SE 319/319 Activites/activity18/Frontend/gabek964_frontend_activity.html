@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <title>Best Movies</title>
+</head>
+
+<body>
+    <h1>Best Movies</h1>
+
+    <!-- Section to display all movies -->
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div id="col" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+                <!-- Cards will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Section to display a single selected movie -->
+    <div class="container my-4">
+        <h2>Selected Movie</h2>
+        <div class="card">
+            <img id="movie-image" class="card-img-top" src="" alt="Movie Image" />
+            <div class="card-body">
+                <h5 id="movie-title" class="card-title">Title</h5>
+                <p id="movie-description" class="card-text">Description</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Input field and button to fetch a single movie by ID -->
+    <div class="container my-3">
+        <input id="movieId" class="form-control" placeholder="Enter Movie ID" />
+        <button onclick="showOneMovie()" class="btn btn-primary mt-2">Show One Movie</button>
+    </div>
+
+    <script>
+        function fetchData() {
+            // Fetch all movies
+            fetch("http://localhost:8081/listMovies")
+                .then(response => response.json())
+                .then(myMovies => {
+                    loadMovies(myMovies);
+                })
+                .catch(err => console.log("Error fetching movies:", err));
+        }
+        fetchData();
+
+        // Load and display all movies
+        function loadMovies(myMovies) {
+            var CardMovie = document.getElementById("col");
+            CardMovie.innerHTML = "";  // Clear existing content
+            myMovies.forEach(movie => {
+                const { title, year, url } = movie;
+                let AddCardMovie = document.createElement("div");
+                AddCardMovie.classList.add("col"); // Bootstrap class for grid layout
+                AddCardMovie.innerHTML = `
+                    <div class="card shadow-sm">
+                        <img src="${url}" class="card-img-top" alt="${title}">
+                        <div class="card-body">
+                            <p class="card-text"><strong>${title}</strong>, ${year}</p>
+                        </div>
+                    </div>`;
+                CardMovie.appendChild(AddCardMovie);
+            });
+        }
+
+        // Fetch and display a single movie by ID
+        function showOneMovie() {
+            let id = document.getElementById("movieId").value;
+            fetch(`http://localhost:8081/${id}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Movie not found");
+                    }
+                    return response.json();
+                })
+                .then(myFavoriteMovie => {
+                    loadOneMovie(myFavoriteMovie);
+                })
+                .catch(error => {
+                    console.error("Error fetching movie:", error);
+                    alert("Movie not found. Please check the ID and try again.");
+                });
+        }
+
+        // Update the single movie display section
+        function loadOneMovie(myFavoriteMovie) {
+            const movieImage = document.getElementById("movie-image");
+            const movieTitle = document.getElementById("movie-title");
+            const movieDescription = document.getElementById("movie-description");
+
+            // Update movie details
+            movieImage.src = myFavoriteMovie.url;
+            movieImage.alt = myFavoriteMovie.title;
+            movieTitle.innerText = myFavoriteMovie.title;
+            movieDescription.innerText = myFavoriteMovie.description;
+        }
+    </script>
+</body>
+
+</html>

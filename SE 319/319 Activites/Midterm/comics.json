@@ -1,0 +1,506 @@
+{
+  "comics": [
+    {
+      "id": 1,
+      "title": "Batman",
+      "author": "DC Comics",
+      "genre": [
+        "Superhero",
+        "Drama",
+        "Comedy",
+        "Adventure",
+        "Romance",
+        "Thriller"
+      ],
+      "description": "Bruce Wayne becomes Batman after witnessing his parents' murder, fighting villains in Gotham City.",
+      "image_url": "https://www.diamondartclub.com/cdn/shop/products/batman-diamond-art-painting-30038510174401.jpg?v=1624828177&width=1200"
+    },
+    {
+      "id": 2,
+      "title": "Joker",
+      "author": "DC Comics",
+      "genre": ["Villain"],
+      "description": "The Joker is Batman's archenemy, a psychopathic criminal mastermind with a sadistic sense of humor.",
+      "image_url": "https://cdn.europosters.eu/image/1300/art-photo/batman-and-joker-comic-cover-i166717.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Superman",
+      "author": "DC Comics",
+      "genre": ["Superhero", "Drama", "Comedy", "Romance"],
+      "description": "Kal-El, an alien from Krypton, becomes Superman, defending humanity with extraordinary powers.",
+      "image_url": "https://nicksupes.com/wp-content/uploads/2024/08/img_6419.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Flash",
+      "author": "DC Comics",
+      "genre": ["Superhero", "Drama", "Comedy", "Romance"],
+      "description": "Barry Allen, struck by lightning, becomes the Flash and uses his super speed to protect Central City.",
+      "image_url": "https://comicvine.gamespot.com/a/uploads/scale_super/5/56044/2054889-flash__2011_4th_series__01a_.jpeg"
+    },
+    {
+      "id": 5,
+      "title": "Thanos",
+      "author": "Marvel Comics",
+      "genre": ["Villain"],
+      "description": "Thanos, the Mad Titan, seeks ultimate power using the Infinity Stones, posing an existential threat.",
+      "image_url": "https://cdn.marvel.com/u/prod/marvel/i/mg/8/90/654bb0c15a46a/clean.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Venom",
+      "author": "Marvel Comics",
+      "genre": ["Superhero", "Drama", "Comedy", "Action"],
+      "description": "Eddie Brock becomes Venom, a symbiotic alien organism, gaining powers and becoming Spider-Man's nemesis.",
+      "image_url": "https://the616comics.com/cdn/shop/products/image_e5c36cd0-b603-4f9a-afa9-cdab1a5fdc31_1200x1200.jpg?v=1645646270"
+    },
+    {
+      "id": 7,
+      "title": "Green Lantern",
+      "author": "DC Comics",
+      "genre": ["Superhero", "Drama", "Comedy", "Action", "Romance"],
+      "description": "Hal Jordan, a Green Lantern, wields a power ring to fight cosmic threats and uphold justice.",
+      "image_url": "https://i0.wp.com/legacycomics.com/wp-content/uploads/2020/03/green-lantern-80th-anniversary-100-page-super-spectacular-1-lee-2010.png?fit=1330%2C2048&ssl=1"
+    },
+    {
+      "id": 8,
+      "title": "Green Arrow",
+      "author": "DC Comics",
+      "genre": ["Superhero", "Drama", "Comedy", "Action", "Romance"],
+      "description": "Oliver Queen becomes Green Arrow, using expert archery skills and trick arrows to fight injustice.",
+      "image_url": "https://www.tfaw.com/media/catalog/product/cache/bd1c9e7ac3d7154f1ee4979ec7ffffb0/9/7/9781779524744_1.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Doctor Doom",
+      "author": "Marvel Comics",
+      "genre": ["Villain"],
+      "description": "Victor Von Doom, a brilliant scientist, seeks power through technology and dark magic.",
+      "image_url": "https://cdn.marvel.com/u/prod/marvel/i/mg/b/f0/5ddc1184c3e0e/clean.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Wonder Woman",
+      "author": "DC Comics",
+      "genre": ["Superhero", "Drama", "Comedy", "Action", "Romance"],
+      "description": "Princess Diana fights for peace and equality as Wonder Woman, armed with magical weapons.",
+      "image_url": "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad84c0fb-f9e3-4c56-94a4-8ff0df86cd5c_1988x3056.jpeg"
+    },
+    {
+      "id": 11,
+      "title": "Martian Manhunter",
+      "author": "DC Comics",
+      "genre": ["Superhero"],
+      "description": "J'onn J'onzz, the last surviving Martian, fights for justice on Earth with shape-shifting and telepathic abilities.",
+      "image_url": "https://s3.amazonaws.com/comicgeeks/comics/covers/large-1678480.jpg?1689394855"
+    },
+    {
+      "id": 12,
+      "title": "Robin/Nightwing",
+      "author": "DC Comics",
+      "genre": ["Superhero", "Drama", "Comedy", "Action", "Romance"],
+      "description": "Dick Grayson, formerly Robin, becomes Nightwing and establishes his identity apart from Batman.",
+      "image_url": "https://cdn.nexternal.com/dreamland/images/nwing_79bnm.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Blue Beetle",
+      "author": "DC Comics",
+      "genre": ["Superhero"],
+      "description": "Jaime Reyes becomes Blue Beetle after discovering an alien scarab, gaining powers to fight crime.",
+      "image_url": "https://m.media-amazon.com/images/I/819-ioGlp4L._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Black Canary",
+      "author": "DC Comics",
+      "genre": ["Superhero"],
+      "description": "Dinah Lance, a martial artist with a sonic Canary Cry, fights alongside heroes like Green Arrow.",
+      "image_url": "https://catspawdynamics.com/wp-content/uploads/2018/04/black-canary-1-4.jpg"
+    },
+    {
+      "id": 15,
+      "title": "Spider Man",
+      "author": "Marvel Comics",
+      "genre": ["Superhero", "Drama", "Comedy", "Action", "Romance"],
+      "description": "Peter Parker, bitten by a radioactive spider, gains powers and becomes Spider-Man, fighting crime while balancing personal struggles.",
+      "image_url": "https://cdn.marvel.com/u/prod/marvel/i/mg/5/d0/659ea7101a2e1/clean.jpg"
+    },
+    {
+      "id": 16,
+      "title": "Green Goblin",
+      "author": "Marvel Comics",
+      "genre": ["Villain"],
+      "description": "Norman Osborn becomes the Green Goblin, a cunning and brutal foe of Spider-Man with goblin-themed weapons.",
+      "image_url": "https://cdn.marvel.com/u/prod/marvel/i/mg/6/a0/5b4e4f49616a4/clean.jpg"
+    },
+    {
+      "id": 17,
+      "title": "Captain America",
+      "author": "Marvel Comics",
+      "genre": ["Superhero", "Drama", "Comedy", "Action", "Romance"],
+      "description": "Steve Rogers, enhanced by the super-soldier serum, becomes Captain America, fighting for justice during WWII and beyond.",
+      "image_url": "https://dreamersbooks.com/cdn/shop/products/captain-america-first-80-years-softcover-previews-exclusive-36745748152560_780x825.jpg?v=1676443210"
+    },
+    {
+      "id": 18,
+      "title": "Iron Man",
+      "author": "Marvel Comics",
+      "genre": ["Superhero", "Drama", "Comedy", "Action", "Romance"],
+      "description": "Tony Stark, a billionaire genius, builds an armored suit and becomes Iron Man to battle global threats.",
+      "image_url": "https://www.g-mart.com/static/f221949.jpg"
+    },
+    {
+      "id": 19,
+      "title": "Thor",
+      "author": "Marvel Comics",
+      "genre": ["Superhero"],
+      "description": "Thor, the Norse God of Thunder, wields Mjolnir to protect Asgard and Earth from cosmic and mythical threats.",
+      "image_url": "https://cdn.marvel.com/u/prod/marvel/i/mg/8/b0/5e00da382a27d/clean.jpg"
+    },
+    {
+      "id": 20,
+      "title": "Loki",
+      "author": "Marvel Comics",
+      "genre": ["Villain"],
+      "description": "Loki, the God of Mischief, uses cunning and magic to manipulate and challenge heroes like Thor.",
+      "image_url": "https://m.media-amazon.com/images/I/81ESfbdICuL._AC_SY679_.jpg"
+    },
+    {
+      "id": 21,
+      "title": "Hulk",
+      "author": "Marvel Comics",
+      "genre": ["Superhero"],
+      "description": "Bruce Banner transforms into the Hulk, a powerful green giant, when enraged, battling foes and inner turmoil.",
+      "image_url": "https://legacycomics.com/wp-content/uploads/2021/10/hulk-1-jurgens-scaled.jpg"
+    },
+    {
+      "id": 22,
+      "title": "Wolverine",
+      "author": "Marvel Comics",
+      "genre": ["Superhero"],
+      "description": "James Howlett, or Wolverine, has retractable claws and a healing factor, making him a key member of the X-Men.",
+      "image_url": "https://tylerkirkhamart.com/cdn/shop/products/239466821_559820505287454_8930037152517496328_n_2048x.jpg?v=1630347583"
+    },
+    {
+      "id": 23,
+      "title": "Megaman",
+      "author": "Capcom",
+      "genre": [
+        "Superhero",
+        "Drama",
+        "Comedy",
+        "Adventure",
+        "Romance",
+        "Action"
+      ],
+      "description": "Rock, known as Mega Man, battles Dr. Wily with an arm cannon and absorbed enemy abilities.",
+      "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFA7HoMy7c1SSw6A4wcLKw-Ghv3gyEaX0OoexqPH6DnshE3KUyVGNDO4GYLgPmbPY3cOz6B9BaQDW5BvuSt5EAZ_K1oaYQGg4_ppz9WTpKq4uWC87Kit4ffeMigJV9wj50_BPKnYzRlLX6/s1600/megaman11a.jpg"
+    },
+    {
+      "id": 24,
+      "title": "Sonic",
+      "author": "Sega",
+      "genre": [
+        "Superhero",
+        "Drama",
+        "Comedy",
+        "Action",
+        "Romance",
+        "Adventure"
+      ],
+      "description": "Sonic, a blue hedgehog with supersonic speed, fights Dr. Robotnik to protect his world.",
+      "image_url": "https://comichub.blob.core.windows.net/high/a7ad0930-74fe-4777-9ecd-343f13adb8e6.jpg"
+    },
+    {
+      "id": 25,
+      "title": "Tintin",
+      "author": "Casterman",
+      "genre": ["Drama", "Comedy", "Action", "Romance"],
+      "description": "Tintin, a young reporter, embarks on adventures with his dog Snowy, solving mysteries around the globe.",
+      "image_url": "https://i.pinimg.com/474x/39/56/2e/39562e27566254230dc5d49ac23cad8e.jpg"
+    },
+    {
+      "id": 26,
+      "title": "Garfield",
+      "author": "Paws, Inc.",
+      "genre": ["Comedy"],
+      "description": "Garfield, a lasagna-loving cat, humorously navigates life with his owner Jon and dog Odie.",
+      "image_url": "https://m.media-amazon.com/images/I/71YuAicJhML._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": 27,
+      "title": "Calvin and Hobbes",
+      "author": "Universal Press Syndicate",
+      "genre": ["Comedy"],
+      "description": "Calvin and Hobbes explore life through imaginative adventures and humorous outlooks.",
+      "image_url": "https://prodimage.images-bn.com/pimages/9780836217353_p0_v1_s1200x630.jpg"
+    },
+    {
+      "id": 28,
+      "title": "Invincible",
+      "author": "Robert Kirkman",
+      "genre": ["Superhero", "Drama", "Comedy", "Action", "Romance"],
+      "description": "Mark Grayson inherits powers from his father and learns the moral complexities of being a hero.",
+      "image_url": "https://m.media-amazon.com/images/I/A1XkXgQMa4L._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": 29,
+      "title": "Astro Boy",
+      "author": "Osamu Tezuka",
+      "genre": ["Action"],
+      "description": "Astro Boy, a robot with human emotions, battles evil and seeks acceptance in a divided society.",
+      "image_url": "https://m.media-amazon.com/images/I/81aJD52vBDS._SL1485_.jpg"
+    },
+    {
+      "id": 30,
+      "title": "Peanuts",
+      "author": "United Feature Syndicate",
+      "genre": ["Comedy"],
+      "description": "The Peanuts gang, led by Charlie Brown, humorously tackles childhood woes and adventures.",
+      "image_url": "https://m.media-amazon.com/images/I/712oQxHtuFL._SY425_.jpg"
+    },
+
+    {
+      "id": 31,
+      "title": "Death Note",
+      "author": "Tsugumi Ohba",
+      "genre": ["Mystery", "Drama"],
+      "description": "Light Yagami discovers a notebook that allows him to kill by writing names, leading to a battle of wits with detective L.",
+      "image_url": "https://static.mangafire.to/3b2d5/i/2/25/25547fcad01b1ce0196e08c85396bc7f.jpg"
+    },
+    {
+      "id": 32,
+      "title": "Attack on Titan",
+      "author": "Hajime Isayama",
+      "genre": ["Drama", "Action"],
+      "description": "Eren Yeager and his friends fight Titans and uncover dark secrets about humanity's survival.",
+      "image_url": "https://static.mangafire.to/3b2d5/i/3/3d/3d54bb613e7bc8552ced316b86877d97.jpg"
+    },
+    {
+      "id": 33,
+      "title": "My Hero Academia",
+      "author": "Kōhei Horikoshi",
+      "genre": ["Action", "Adventure", "Superhero", "Drama"],
+      "description": "In a world of superpowers, Izuku Midoriya dreams of becoming a hero and enrolls in a prestigious hero academy.",
+      "image_url": "https://static.mangafire.to/3b2d5/i/6/6b/4c1cc8f00f2a047ce4f452e055c2cad4.jpg"
+    },
+    {
+      "id": 34,
+      "title": "The Legend of Zelda: Ocarina of Time",
+      "author": "Akira Himekawa",
+      "genre": ["Comedy", "Adventure", "Fantasy"],
+      "description": "Link embarks on a perilous journey to deliver the Emerald to Princess Zelda and save Hyrule.",
+      "image_url": "https://m.media-amazon.com/images/I/81AnoJLn2eL._SL1500_.jpg"
+    },
+    {
+      "id": 35,
+      "title": "The Legend of Zelda: Twilight Princess",
+      "author": "Akira Himekawa",
+      "genre": ["Adventure", "Romance", "Action", "Fantasy"],
+      "description": "Link answers the call to protect his village from the dark minions of the King of Shadows.",
+      "image_url": "https://m.media-amazon.com/images/I/81wfko3QMyL._SL1500_.jpg"
+    },
+    {
+      "id": 36,
+      "title": "Daredevil",
+      "author": "Marvel Comics",
+      "genre": ["Superhero", "Action", "Romance"],
+      "description": "Blinded as a child, Matt Murdock fights crime as a lawyer by day and as Daredevil by night.",
+      "image_url": "https://m.media-amazon.com/images/I/81ZLgB4MeyL._SL1500_.jpg"
+    },
+    {
+      "id": 37,
+      "title": "Moon Knight",
+      "author": "Marvel Comics",
+      "genre": ["Superhero", "Drama", "Comedy", "Action", "Romance"],
+      "description": "Marc Spector becomes Moon Knight, battling criminals and supernatural threats while struggling with dissociative identity disorder.",
+      "image_url": "https://m.media-amazon.com/images/I/81Fr3pU2bEL._SL1500_.jpg"
+    },
+    {
+      "id": 38,
+      "title": "Ms. Marvel",
+      "author": "Marvel Comics",
+      "genre": ["Superhero", "Drama", "Romance"],
+      "description": "Kamala Khan, a Pakistani-American teenager, discovers her powers and becomes Ms. Marvel, fighting for justice.",
+      "image_url": "https://cdn.marvel.com/u/prod/marvel/i/mg/e/b0/5be371a0f2dae/clean.jpg"
+    },
+    {
+      "id": 39,
+      "title": "Teen Titans",
+      "author": "DC Comics",
+      "genre": ["Superhero", "Drama", "Comedy", "Adventure", "Romance"],
+      "description": "Young heroes balance personal lives with superhero duties while battling villains as the Teen Titans.",
+      "image_url": "https://external-preview.redd.it/artwork-titans-together-titans-variant-cover-by-dan-mora-v0-gwA2_Q9gKMQi51necZ1Ra8T8szS_xHYQrt4mXUEMwns.jpg?width=1080&crop=smart&auto=webp&s=ded151599729e1324c8d1a19972fd32d6ab9d475"
+    },
+    {
+      "id": 40,
+      "title": "X-Men",
+      "author": "Marvel Comics",
+      "genre": ["Superhero", "Romance", "Drama", "Action"],
+      "description": "The X-Men, a team of mutants, fight for equality and explore themes of identity and sacrifice.",
+      "image_url": "https://www.midtowncomics.com/images/PRODUCT/XL/2326727_xl.jpg"
+    },
+    {
+      "id": 41,
+      "title": "Hawkeye",
+      "author": "Marvel Comics",
+      "genre": ["Superhero", "Comedy", "Action"],
+      "description": "Clint Barton, a master archer, fights alongside the Avengers using his exceptional marksmanship.",
+      "image_url": "https://m.media-amazon.com/images/I/513ka2jDyzL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": 42,
+      "title": "Dragon-Ball",
+      "author": "Akira Toriyama",
+      "genre": ["Superhero", "Comedy", "Action"],
+      "description": "Gokuu Son joins Bulma on an adventure to find the seven Dragon Balls and discover their secrets.",
+      "image_url": "https://static.rapidcdn.cc/i/d/dd/dd100ee6f7b8df2b0503bade773487b5.jpg"
+    },
+    {
+      "id": 43,
+      "title": "Dragon-Ball Z",
+      "author": "Akira Toriyama",
+      "genre": ["Superhero", "Comedy", "Action"],
+      "description": "",
+      "image_url": "https://static.mangafire.to/e78b/i/5/57/57d93191aa22e4e13939638fb0e592a8.jpg"
+    },
+    {
+      "id": 44,
+      "title": "Dragon-Ball Super",
+      "author": "Akira Toriyama",
+      "genre": ["Superhero", "Comedy", "Action"],
+      "description": "Goku faces the God of Destruction, Beerus, in a quest to track down the mysterious Super Saiyan God.",
+      "image_url": "https://static.rapidcdn.cc/i/e/e0/e0dc62acf3a72fb0d9a72436d77840e1.jpg"
+    },
+    {
+      "id": 45,
+      "title": "My Hero Academia Vigilantes",
+      "author": "Court Betten, Hideyuki Furuhashi",
+      "genre": ["Superhero", "Comedy", "Action","Fantasy"],
+      "description": "Kouichi adopts the persona of a vigilante to prevent crimes in a world of heroes.",
+      "image_url": "https://static.rapidcdn.cc/i/4/47/47caef08ff6a146bca4447c4f8a8b996.jpg"
+    },
+    {
+      "id": 46,
+      "title": "Eleceed",
+      "author": "Jae-Ho Son, Hye-Jin Kim",
+      "genre": ["Superhero", "Comedy", "Action"],
+      "description": "Jiwoo and a trapped agent cat team up to combat evil using exceptional abilities and intelligence.",
+      "image_url": "https://static.mangafire.to/3b2d5/i/6/61/613c8add0a6267938e2baa194f6dc07c.jpg"
+    },
+    {
+      "id": 47,
+      "title": "Pokemon Adventures",
+      "author": " Hidenori Kusaka, Satoshi Yamamoto, Mato",
+      "genre": ["Superhero", "Comedy", "Action","Fantasy","Drama"],
+      "description": "Red embarks on an adventure in the Pokémon world, confronting Team Rocket and their experiments.",
+      "image_url": "https://static.rapidcdn.cc/i/9/9d/9d9618cb43a423adb6c60be555e919f6.jpg"
+    },
+    {
+      "id": 48,
+      "title": "One Piece",
+      "author": "Eiichiro Oda",
+      "genre": ["Superhero", "Comedy", "Action","Adventure","Fantasy"],
+      "description": "Gol D. Roger, a man referred to as the Pirate King, is set to be executed by the World Government. But just before his demise, he confirms the existence of a great treasure, One Piece, located somewhere within the vast ocean known as the Grand Line. Announcing that One Piece can be claimed by anyone worthy enough to reach it, the Pirate King is executed and the Great Age of Pirates begins. Twenty-two years later, a young man by the name of Monkey D. Luffy is ready to embark on his own adventure, searching for One Piece and striving to become the new Pirate King. Armed with just a straw hat, a small boat, and an elastic body, he sets out on a fantastic journey to gather his own crew and a worthy ship that will take them across the Grand Line to claim the greatest status on the high seas.",
+      "image_url": "https://m.media-amazon.com/images/I/71y+XnBXm4L._SY466_.jpg"
+    },
+    {
+      "id": 49,
+      "title": "Naruto",
+      "author": "Masashi Kishimoto",
+      "genre": ["Superhero", "Comedy", "Action","Fantasy"],
+      "description": "Despite Naruto Uzumaki's persistent proclamation that he will someday hold the esteemed title of Hokage, bestowed only upon the greatest ninja in the Village Hidden in Leaves, his fellow villagers refuse to take him seriously. Since birth, they have ostracized and mocked him, not because of his playful nature, sharp tongue, or lack of skill in ninja techniques, but due to the presence of a demon living within him. Prior to his birth, a fearsome and lethal Nine-Tailed Fox had wreaked havoc on the village, prompting the Fourth Hokage to sacrifice himself to seal the demon inside the infant Naruto.",
+      "image_url": "https://m.media-amazon.com/images/I/71QYLrc-IQL._SY466_.jpg"
+    },
+    {
+      "id": 50,
+      "title": "Bleach",
+      "author": "Tite Kubo",
+      "genre": ["Superhero", "Comedy", "Action", "Fantasy"],
+      "description": "Despite always being able to see ghosts, Ichigo Kurosaki's life changes drastically after encountering Rukia Kuchiki, a member of the mysterious Soul Society who grants him her powers to save his family from a Hollow, only to be completely absorbed by Ichigo. As a newly appointed Soul Reaper, Ichigo is tasked with protecting the innocent from dangerous spirits and helping lost spirits find peace, all while Rukia regains her powers. Including the 12-chapter side story Turn Back The Pendulum and 8 extra chapters, the story spans several chapters.",
+      "image_url": "https://m.media-amazon.com/images/I/81vbN16NtXL._SY466_.jpg"
+    },
+    {
+      "id": 51,
+      "title": "Solo Leveling",
+      "author": "Tite Kubo",
+      "genre": ["Superhero", "Comedy", "Action", "Fantasy"],
+      "description": "Sung Jinwoo, also known as the weakest hunter of all mankind, resides in a world full of awakened beings known as Hunters whose sole purpose is to protect humanity by battling deadly monsters. Jinwoo struggles to survive in this world, faced with constant threats. However, after a brutal encounter leaves his party and his life in danger, he is chosen by a mysterious System as its only player. This is a rare opportunity for Jinwoo to level up his abilities beyond known limits. Join Jinwoo on his journey as he faces increasingly stronger enemies, both human and monster, to uncover the secrets hidden within the dungeons and push his abilities to the ultimate extent. This epic adventure includes a prologue, making it a complete story with several chapters.",
+      "image_url": "https://m.media-amazon.com/images/I/816hywlmu-L._SY466_.jpg"
+    },
+    {
+      "id": 52,
+      "title": "The Beginning After the End",
+      "author": "TurtleMe",
+      "genre": ["Superhero", "Comedy", "Action","Fantasy"],
+      "description": "Despite always being able to see ghosts, Ichigo Kurosaki's life changes drastically after encountering Rukia Kuchiki, a member of the mysterious Soul Society who grants him her powers to save his family from a Hollow, only to be completely absorbed by Ichigo. As a newly appointed Soul Reaper, Ichigo is tasked with protecting the innocent from dangerous spirits and helping lost spirits find peace, all while Rukia regains her powers. Including the 12-chapter side story Turn Back The Pendulum and 8 extra chapters, the story spans several chapters.",
+      "image_url": "https://m.media-amazon.com/images/I/81eqlOf4owL._SY466_.jpg"
+    },
+    {
+      "id": 53,
+      "title": "Lumine",
+      "author": "Emma Krogell",
+      "genre": ["Superhero", "Comedy", "Action", "Fantasy"],
+      "description": "Sung Jinwoo, also known as the weakest hunter of all mankind, resides in a world full of awakened beings known as Hunters whose sole purpose is to protect humanity by battling deadly monsters. Jinwoo struggles to survive in this world, faced with constant threats. However, after a brutal encounter leaves his party and his life in danger, he is chosen by a mysterious System as its only player. This is a rare opportunity for Jinwoo to level up his abilities beyond known limits. Join Jinwoo on his journey as he faces increasingly stronger enemies, both human and monster, to uncover the secrets hidden within the dungeons and push his abilities to the ultimate extent. This epic adventure includes a prologue, making it a complete story with several chapters.",
+      "image_url": "https://m.media-amazon.com/images/I/81CRNauCzmL._SY466_.jpg"
+    },
+    {
+      "id": 54,
+      "title": "Omniscent Reader's Viewpoint",
+      "author": "sing N song, Sleepy-C",
+      "genre": ["Superhero", "Comedy", "Action", "Fantasy"],
+      "description": "Kim Dokja does not view himself as the main character in his own life, preferring solitude and spending his time reading web novels as his only pastime. He's particularly attached to Yoo Joonghyuk, the hero of Three Ways to Survive the Apocalypse, and through his character, he's experienced the harrowing difficulties of time regression and the struggle to survive dangerous scenarios imposed on individuals by god-like entities known as Constellations. Dokja devotes himself to the novel and reads all 3,149 chapters, outlasting his peers who lost interest long before. Despite his disappointment in the story's conclusion, he receives a cryptic message from the author warning of future monetization before his surroundings turn pitch black, and he soon realizes he's living the novel's reality. As the only omniscient reader of the book's events, he's uncertain of his success in navigating the challenges to come, but he may now have the opportunity to embrace the protagonist he never felt suited for.",
+      "image_url": "https://m.media-amazon.com/images/I/81ZuZO5vr2L._SY466_.jpg"
+    },
+    {
+      "id": 55,
+      "title": "Unordinary",
+      "author": "uru-chan",
+      "genre": ["Superhero", "Comedy", "Fantasy", "Action"],
+      "description": "As a regular teenager in a school ruled by individuals with extraordinary capabilities, John received no attention. Nonetheless, he harbored a hidden history with the ability to demolish the entire social hierarchy of the school and beyond. Coming to terms with his fate wouldn't be effortless, given the perilous conflicts, unreliable acquaintances, and life-risking schemes that lurked in every nook and cranny.",
+      "image_url": "https://m.media-amazon.com/images/I/51Y1zo-m5rL._SY445_SX342_.jpg"
+    },
+    {
+      "id": 56,
+      "title": "Lore Olympus",
+      "author": "Rachel Smythe",
+      "genre": ["Romance", "Comedy", "Fantasy"],
+      "description": "As a regular teenager in a school ruled by individuals with extraordinary capabilities, John received no attention. Nonetheless, he harbored a hidden history with the ability to demolish the entire social hierarchy of the school and beyond. Coming to terms with his fate wouldn't be effortless, given the perilous conflicts, unreliable acquaintances, and life-risking schemes that lurked in every nook and cranny.",
+      "image_url": "https://m.media-amazon.com/images/I/81TywkHV+7L._SY466_.jpg"
+    },
+    {
+      "id": 57,
+      "title": "How To Fight",
+      "author": "Tae-Jun Park, Jung-Hyun Kim",
+      "genre": [ "Comedy", "Action"],
+      "description": "During his high school years, Yoo Hobin experiences constant humiliation and abuse from his classmate and popular Newtube influencer, Pakgo. Adding to the burden, Hobin toils at a part-time job to pay for his mother's medical expenses. One day, Hobin accidentally interrupts Pakgo's stream, leading to a feeble scuffle with Pakgo's cameraman, Jiksae. Motivated to stand up for himself, Hobin decides to take charge. Things take an unexpected turn when Jiksae's camera captures the embarrassing altercation, making it go viral overnight, bringing in ten million won for Hobin. Encouraged by his newfound triumph, Hobin partners with Jiksae to create more footage, challenging bullies like Pakgo. Nevertheless, Hobin might face his toughest competitor in the competitive world of Newtube streaming or rise to the top.",
+      "image_url": "https://static.mangafire.to/3b2d5/i/7/70/705c2126a15c0cfa251b67e7c3766610.jpg"
+    },
+    {
+      "id": 58,
+      "title": "Kaiju No.8",
+      "author": "Naoya Matsumoto",
+      "genre": [ "Comedy", "Action", "Fantasy"],
+      "description": "For many years, Japan has been tormented by grotesque kaijuu - Godzilla-like creatures. The Defense Corps, an esteemed military unit, bravely defends civilians from these beasts day in and day out. When a kaijuu is defeated, the Professional Kaijuu Cleaner Corporation hires sweepers to clear their remains. Kafka Hibino, a 32-year-old sweeper, has always longed to join the Defense Corps and become a kaijuu slayer. Despite several attempts, he has been unsuccessful and has settled for a mundane yet profitable life. But when Leno Ichikawa, an ambitious teenage recruit, joins Kafka's cleaning team, his yearning for military service is reignited. Fate intervenes when Kafka encounters a parasitic kaijuu that enters his body forcibly, transforming him into a humanoid creature with enhanced abilities. With this newfound strength, Kafka decides to take a chance and pursue his lifelong dream",
+      "image_url": "https://static.rapidcdn.cc/i/4/45/4547b32ff540e4c8f0e1db9d5da1d33b.jpg"
+    },
+    {
+      "id": 59,
+      "title": "Dandadan",
+      "author": " Yukinobu Tatsu",
+      "genre": ["Superhero", "Comedy", "Action"],
+      "description": "Feeling dejected after receiving a brutal rejection, Momo Ayase's mood lifted when she stumbled upon a boy being bullied. Ayase intervened and attempted to bond with the boy over his interest in supernatural phenomena. However, Ayase did not share the same beliefs and instead proclaimed her belief in phantoms. This sparked a heated dispute between the two. To settle the disagreement, they agreed to venture to locations associated with their respective interests. Ayase visited the occult location while the boy explored an area associated with ghosts. To their surprise, they were both correct - the occult and ghostly entities did exist.This occurrence triggered an expedition where Ayase and the boy strove to restore normalcy to their extraordinary and futuristic surroundings.",
+      "image_url": "https://static.rapidcdn.cc/i/a/a2/a2d2416c0ea9c6c2286dcbe9916ed91c.jpg"
+    },
+    {
+      "id": 60,
+      "title": "Kagurabachi",
+      "author": "Takeru Hokazono",
+      "genre": ["Drama", "Action", "Fantasy"],
+      "description": "A former swordsmith apprentice embarks on a bloodthirsty path against a gang of sorcerers who have taken over the city!",
+      "image_url": "https://static.rapidcdn.cc/i/c/ce/ce514153133729577ae92f5adfa520a2.jpg"
+    }
+  ]
+}
