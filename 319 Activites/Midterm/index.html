@@ -39,45 +39,34 @@
             <a class="nav-link " aria-current="page" href="./blog.html">Blogs</a>
           </li>
         </ul>
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
+
+        <!-- Search and Genre Select in Navbar -->
+        <form class="d-flex align-items-center gap-2" role="search" onsubmit="event.preventDefault(); performSearch();">
+          <select id="genre-select" class="form-select form-select-sm" aria-label="Genre select" style="width: 150px;">
+            <option value="" disabled selected>Genre</option>
+            <option value="All">All</option>
+            <option value="Action">Action</option>
+            <option value="Drama">Drama</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Romance">Romance</option>
+            <option value="Villain">Villain</option>
+            <option value="Superhero">Superhero</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Fantasy">Fantasy</option>
+          </select>
+          <input class="form-control form-control-sm" type="search" id="header-search" placeholder="Search"
+            aria-label="Search" />
+          <button class="btn btn-sm btn-outline-light" type="submit">Search</button>
+        </form>
+
       </div>
     </div>
+    <button id="darkModeToggle" class="btn btn-sm btn-outline-light ms-3" type="button">
+      <i class="fas fa-moon"></i> Dark Mode
+    </button>
   </nav>
-
-
-  <!-- Centered Search Bar and Genre Dropdown -->
-  <div class="search-container text-center mt-4">
-    <div class="genre-dropdown mb-3">
-      <label for="genre-select" class="visually-hidden">Genre</label>
-      <select name="genre" id="genre-select" class="form-select">
-        <option value="" disabled selected>Select Genre</option>
-        <option value="Action">Action</option>
-        <option value="Drama">Drama</option>
-        <option value="Adventure">Adventure</option>
-        <option value="Romance">Romance</option>
-        <option value="Villain">Villain</option>
-        <option value="Superhero">Superhero</option>
-        <option value="Thriller">Thriller</option>
-        <option value="Comedy">Comedy</option>
-        <option value="Mystery">Mystery</option>
-        <option value="Fantasy">Fantasy</option>
-      </select>
-    </div>
-
-    <div class="search-bar mb-3">
-      <label for="header-search" class="visually-hidden">Search</label>
-      <input class="form-control" type="text" name="header-search" id="header-search" placeholder="Search" />
-      <button type="button" class="btn btn-outline-secondary mt-2" aria-label="Search" onclick="performSearch()">
-        Search
-      </button>
-    </div>
-  </div>
 
   <!-- Results Container -->
   <div id="results" class="container mt-4">
@@ -87,7 +76,6 @@
   <script>
     const favoritesKey = 'favoriteComics';
 
-    // Fetch comics from the JSON file
     async function fetchComics() {
       try {
         const response = await fetch('./comics.json');
@@ -95,15 +83,16 @@
           throw new Error('Network response was not ok');
         }
         const comics = await response.json();
-        return comics.comics; // Ensure this returns the array of comics
+        return comics.comics;
       } catch (error) {
         console.error('Error fetching comics:', error);
-        return []; // Return an empty array in case of error
+        return [];
       }
     }
+
     function displayResults(comics) {
       const resultsContainer = document.getElementById('comicRow');
-      resultsContainer.innerHTML = ''; // Clear previous results
+      resultsContainer.innerHTML = '';
 
       if (comics.length === 0) {
         resultsContainer.innerHTML = '<p>No results found</p>';
@@ -113,66 +102,49 @@
       comics.forEach(comic => {
         const averageRating = getAverageRating(comic.title);
         const comicItem = document.createElement('div');
-        comicItem.classList.add('comic-item', 'col-md-2', 'mb-4'); // Use Bootstrap's grid classes
+        comicItem.classList.add('comic-item', 'col-md-2', 'mb-4');
 
         comicItem.innerHTML = `
-      <div class="card h-100">
-        <img src="${comic.image_url}" class="card-img-top" alt="${comic.title}" style="object-fit: cover; height: 200px;" />
-        <div class="card-body">
-          <h5 class="card-title">${comic.title}</h5>
-          <p class="card-text"><strong>Publisher:</strong> ${comic.author}</p>
-          
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-primary" onclick="showComicDetails('${comic.title}')">View Details</button>
-        </div>
-      </div>
-    `;
+          <div class="card h-100">
+            <img src="${comic.image_url}" class="card-img-top" alt="${comic.title}" style="object-fit: cover; height: 200px;" />
+            <div class="card-body">
+              <h5 class="card-title">${comic.title}</h5>
+              <p class="card-text"><strong>Publisher:</strong> ${comic.author}</p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary" onclick="showComicDetails('${comic.title}')">View Details</button>
+            </div>
+          </div>
+        `;
 
         resultsContainer.appendChild(comicItem);
       });
     }
 
-
-
     function rateComic(title, rating) {
       const ratingsKey = 'comicRatings';
       const ratings = JSON.parse(localStorage.getItem(ratingsKey)) || {};
-
-      // Add or update the rating
-      if (!ratings[title]) {
-        ratings[title] = [];
-      }
+      if (!ratings[title]) ratings[title] = [];
       ratings[title].push(rating);
       localStorage.setItem(ratingsKey, JSON.stringify(ratings));
-
-      // Update the displayed average rating without refreshing
       updateRatingDisplay(title);
     }
-
 
     function updateRatingDisplay(title) {
       const averageRating = getAverageRating(title);
       const ratingDisplay = document.getElementById(`modal-rating-${title}`) || document.getElementById(`rating-${title}`);
-
-      if (ratingDisplay) {
-        ratingDisplay.innerText = `${averageRating.toFixed(1)} ⭐`;
-      }
+      if (ratingDisplay) ratingDisplay.innerText = `${averageRating.toFixed(1)} ⭐`;
     }
 
     function getAverageRating(title) {
       const ratingsKey = 'comicRatings';
       const ratings = JSON.parse(localStorage.getItem(ratingsKey)) || {};
-
       if (ratings[title]) {
         const total = ratings[title].reduce((sum, rating) => sum + rating, 0);
         return total / ratings[title].length;
       }
-
-      return 0; // No rating given
+      return 0;
     }
-
-
     async function performSearch() {
       const searchQuery = document.getElementById('header-search').value.trim().toLowerCase();
       const selectedGenres = Array.from(document.getElementById('genre-select').selectedOptions).map(option => option.value);
@@ -180,11 +152,15 @@
       try {
         const comics = await fetchComics();
 
-        // Filter comics based on search query and selected genres
         const filteredComics = comics.filter(comic => {
           const matchesSearch = comic.title.toLowerCase().includes(searchQuery) ||
             comic.author.toLowerCase().includes(searchQuery);
-          const matchesGenre = selectedGenres.length > 0 ? selectedGenres.some(genre => comic.genre.includes(genre)) : true;
+
+          // If "All" is selected, ignore genre filtering
+          const matchesGenre = (selectedGenres.includes("All") || selectedGenres.length === 0)
+            ? true
+            : selectedGenres.some(genre => comic.genre.includes(genre));
+
           return matchesSearch && matchesGenre;
         });
 
@@ -196,79 +172,64 @@
     }
 
 
-    // Toggle favorite status
     function toggleFavorite(title) {
       let favorites = JSON.parse(localStorage.getItem(favoritesKey)) || [];
-
       if (favorites.includes(title)) {
         favorites = favorites.filter(fav => fav !== title);
       } else {
         favorites.push(title);
       }
-
       localStorage.setItem(favoritesKey, JSON.stringify(favorites));
-
-      // Update the favorite button text without refreshing
       const button = document.querySelector(`button[onclick="toggleFavorite('${title}')"]`);
       button.innerText = isFavorite(title) ? 'Unfavorite' : 'Favorite';
     }
 
-
-    // Check if a comic is a favorite
     function isFavorite(title) {
       const favorites = JSON.parse(localStorage.getItem(favoritesKey)) || [];
       return favorites.includes(title);
     }
 
-    // Show detailed comic information in a modal
-    <!-- Inside the showComicDetails function -->
-    // Update the modal showComicDetails function to display the rating correctly
     function showComicDetails(title) {
       fetchComics().then(comics => {
         const comic = comics.find(c => c.title === title);
         if (comic) {
           const averageRating = getAverageRating(comic.title);
           const details = `
-        <div class="modal fade" id="comicDetailModal" tabindex="-1" aria-labelledby="comicDetailModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="comicDetailModalLabel">${comic.title}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <img src="${comic.image_url}" class="img-fluid" alt="${comic.title}">
-                <p><strong>Publisher:</strong> ${comic.author}</p>
-                <p>${comic.description || "No description available."}</p>
-      
-                <div>
-                  <strong>Rating:</strong> <span id="modal-rating-${comic.title}">${averageRating.toFixed(1)} ⭐</span>
-                </div>
-                <div class="mt-2">
-                  <button class="btn btn-outline-danger" onclick="toggleFavorite('${comic.title}')">
-                    ${isFavorite(comic.title) ? 'Unfavorite' : 'Favorite'}
-                  </button>
-                  <div class="mt-2">
-                    <button class="btn btn-outline-warning" onclick="rateComic('${comic.title}', 1)">1 Star</button>
-                    <button class="btn btn-outline-warning" onclick="rateComic('${comic.title}', 2)">2 Stars</button>
-                    <button class="btn btn-outline-warning" onclick="rateComic('${comic.title}', 3)">3 Stars</button>
-                    <button class="btn btn-outline-warning" onclick="rateComic('${comic.title}', 4)">4 Stars</button>
-                    <button class="btn btn-outline-warning" onclick="rateComic('${comic.title}', 5)">5 Stars</button>
+            <div class="modal fade" id="comicDetailModal" tabindex="-1" aria-labelledby="comicDetailModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="comicDetailModalLabel">${comic.title}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <img src="${comic.image_url}" class="img-fluid" alt="${comic.title}">
+                    <p><strong>Publisher:</strong> ${comic.author}</p>
+                    <p>${comic.description || "No description available."}</p>
+                    <div>
+                      <strong>Rating:</strong> <span id="modal-rating-${comic.title}">${averageRating.toFixed(1)} ⭐</span>
+                    </div>
+                    <div class="mt-2">
+                      <button class="btn btn-outline-danger" onclick="toggleFavorite('${comic.title}')">
+                        ${isFavorite(comic.title) ? 'Unfavorite' : 'Favorite'}
+                      </button>
+                      <div class="mt-2">
+                        <button class="btn btn-outline-warning" onclick="rateComic('${comic.title}', 1)">1 Star</button>
+                        <button class="btn btn-outline-warning" onclick="rateComic('${comic.title}', 2)">2 Stars</button>
+                        <button class="btn btn-outline-warning" onclick="rateComic('${comic.title}', 3)">3 Stars</button>
+                        <button class="btn btn-outline-warning" onclick="rateComic('${comic.title}', 4)">4 Stars</button>
+                        <button class="btn btn-outline-warning" onclick="rateComic('${comic.title}', 5)">5 Stars</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      `;
+          `;
           document.body.insertAdjacentHTML('beforeend', details);
           const modal = new bootstrap.Modal(document.getElementById('comicDetailModal'));
           modal.show();
-
-          // Update the displayed rating after rating a comic
           updateRatingDisplay(comic.title);
-
-          // Remove modal from the DOM after it's closed
           document.getElementById('comicDetailModal').addEventListener('hidden.bs.modal', function () {
             this.remove();
           });
@@ -276,18 +237,44 @@
       });
     }
 
-
-    // Call fetchComics and display all comics when the page loads
     window.onload = async function () {
       const comicsArray = await fetchComics();
       if (comicsArray) {
-        displayResults(comicsArray); // Display all comics initially
+        displayResults(comicsArray);
       }
     };
+
+
+  </script>
+  <script>
+    // DARK MODE SETUP
+    document.getElementById('darkModeToggle').addEventListener('click', function () {
+      document.body.classList.toggle('dark-mode');
+
+      // Save dark mode state
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        this.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+        this.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+      }
+    });
+
+    // Check dark mode setting on page load
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+      const toggleButton = document.getElementById('darkModeToggle');
+      if (toggleButton) {
+        toggleButton.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+      }
+    }
   </script>
 
-  <footer>
-    <p class="text-center">&copy; Midterm Project</p>
+
+  <!-- Footer -->
+  <footer class="text-center mt-5">
+    Gabriel Kiveu &copy; Midterm Project
   </footer>
 </body>
 

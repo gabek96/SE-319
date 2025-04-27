@@ -202,3 +202,41 @@ h1, h2, h3, h4 {
 .comments {
   margin-top: 10px;
 }
+
+/* Default Light Mode */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.card {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.navbar-dark.bg-dark {
+  background-color: #212529;
+}
+
+/* Adjust inputs and buttons for dark mode */
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #555555;
+}
+
+body.dark-mode .btn {
+  border-color: #999999;
+}
